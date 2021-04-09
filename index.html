@@ -7,7 +7,7 @@
     <title>WPM Test</title>
  
   <link rel="stylesheet" href="home.css">
-   <link rel="stylesheet" href="media.css">
+   <!-- <link rel="stylesheet" href="media.css"> -->
 </head>
 <body>
   <div class="container">
@@ -16,10 +16,10 @@
 
 <div class="limit">
 
-    <a id="fifteen" onclick="fifteen()">15s</a>
-    <a id="thirty" onclick="thirty()">30s</a>
-    <a id="sixty" onclick="sixty()">60s</a>
-    <a id="twomin" onclick="twomin()">120s</a>
+    <a id="fifteen" onclick="setTimeLimit(15)">15s</a>
+    <a id="thirty" onclick="setTimeLimit(30)">30s</a>
+    <a id="sixty" onclick="setTimeLimit(60)">60s</a>
+    <a id="twomin" onclick="setTimeLimit(120)">120s</a>
 
 </div>
     <div class="header">
@@ -57,10 +57,10 @@
 <div class="dropdown">
   <button id = "firstrow" class="dropbtn">Choose Level</button>
   <div class="dropdown-content">
-  <a onclick="easy()"><b>Easy</b></a>
-  <a onclick="medium()"><b>Medium</b></a>
-  <a onclick="hard()"><b>Hard</b></a>
-  <a onclick="ultrahard()"><b>Ultra Hard</b></a>
+  <a onclick="setGameDifficulty('Easy')"><b>Easy</b></a>
+  <a onclick="setGameDifficulty('Medium')"><b>Medium</b></a>
+  <a onclick="setGameDifficulty('Hard')"><b>Hard</b></a>
+  <a onclick="setGameDifficulty('Ultrahard')"><b>Ultra Hard</b></a>
   </div>
 </div>
     <textarea class="input_area" placeholder="Click me to start test..." oninput="processCurrentText()"
