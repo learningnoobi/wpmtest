@@ -1,13 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Flamenco&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --bg-color: rgb(35, 28, 41);
+  --font-color: snow;
+  --inputarea:rgb(83, 59, 108);
+  --headingcolor:rgb(196, 189, 189);
+  --incorectchar:rgb(255, 0, 85);
+  --quotecol:rgb(236, 83, 155);
+  --restartBtn: rgb(179, 68, 235);
+  --timemode:rgb(236, 83, 155);
+  --timer:linear-gradient(90deg, rgba(227,54,113,1) 0%, rgba(237,119,115,1) 100%);
+  --errorCol: rgb(245, 46, 112);
+  --accuracy:rgb(71, 171, 113);
+}
+
+[data-theme="light"] {
+  --bg-color: linear-gradient(45deg,#405de6,#4138f5,#833ab4,#c13584,#e1306c,#Fd1ddd);
+  --font-color: #222;
+  --inputarea:rgb(52, 46, 59);
+  --headingcolor:rgb(255, 255, 255);
+  --incorectchar:rgb(240, 94, 143);
+  --quotecol: rgb(223, 153, 186);
+  --restartBtn: rgb(233, 104, 136);
+  --timemode:rgb(78, 4, 29);
+  --timer:linear-gradient(90deg, rgb(240, 70, 127) 0%, rgb(237, 115, 151) 100%);
+  --errorCol: rgb(235, 96, 138);
+  --accuracy:rgb(40, 150, 89);
+}
 body {
-  background-color:rgb(35, 28, 41);
-  color: black;
+  background:var(--bg-color);
+  color: var(--font-color);
   text-align: center;
   font-family: 'Raleway', sans-serif;
   margin:0;
   padding: 0;
   box-sizing: border-box;
+}
+/* TOGGLE  */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: rgb(255, 255, 255);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: linear-gradient(90deg, rgba(227,54,113,1) 0%, rgba(237,119,115,1) 100%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider svg {
+  color: rgb(38, 57, 161);
+  position: absolute;
+  transition: opacity 0.2s ease 0s, transform 0.35s ease 0s;
+  pointer-events: none;
+}
+
+.feather-moon {
+  opacity: 0;
+  left: 9px;
+  bottom: 9px;
+  transform: translateX(4px);
+}
+
+.feather-sun {
+  opacity: 1;
+  right: 10px;
+  bottom: 9px;
+  transform: translateX(0px);
+}
+
+input:checked + .slider .feather-moon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+input:checked + .slider .feather-sun {
+  opacity: 0;
+  transform: translateX(-4px);
 }
 
 .container {
@@ -36,7 +149,7 @@ body {
   text-transform: uppercase;
   font-size: 3rem;
   font-family: 'Flamenco', cursive;
-  color: rgb(196, 189, 189);
+  color: var(--headingcolor);
 }
 
 .header {
@@ -49,8 +162,8 @@ body {
 
 .timer
 {
-  background: rgb(227,54,113);
-  background: linear-gradient(90deg, rgba(227,54,113,1) 0%, rgba(237,119,115,1) 100%);
+
+  background: var(--timer);
   height: 70px;
   width: 80px;
   margin: 8px;
@@ -77,7 +190,7 @@ body {
   color:white;
 }
 .accuracy{
-  background: rgb(71, 171, 113);
+  background: var(--accuracy);
   height: 70px;
   width: 80px;
   margin: 8px;
@@ -86,7 +199,7 @@ body {
   color:white;
 }
 .errors{
-  background: rgb(245, 46, 112);
+  background:var(--errorCol);
   height: 70px;
   width: 80px;
   margin: 8px;
@@ -112,7 +225,7 @@ body {
 }
 
 .quote {
-  border:2px dotted rgb(236, 83, 155);
+  border:2px dotted var(--quotecol);
   font-size: 1.5rem;
   margin: 10px;
   padding: 25px;
@@ -122,7 +235,7 @@ body {
 }
 
 .input_area {
-  background-color: rgb(83, 59, 108);
+  background-color: var(--inputarea);
   border: 0;
   margin-top: 10px;
   width: 60%;
@@ -134,7 +247,7 @@ body {
 }
 
 .incorrect_char {
-  color: rgb(211, 71, 71);
+  color:var(--incorectchar);
   text-decoration: underline;
 }
 
@@ -143,7 +256,7 @@ body {
 }
 
 .restart_btn {
-  background-color: rgb(182, 100, 223);
+  background-color:var(--restartBtn);
   border: none;
   color:white;
   text-transform: uppercase;

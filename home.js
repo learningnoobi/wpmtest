@@ -29,7 +29,7 @@ function setTimeLimit(time) {
   timer_text.innerText = current.timeLimit + "s";
 
   for (t in timeModes) {
-    timeModes[t].style.color = t == time ? "#ee4e81" : "white";
+    timeModes[t].style.color = t == time ? "var(--timemode)" : "white";
   }
 }
 
