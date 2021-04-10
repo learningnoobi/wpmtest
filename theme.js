@@ -11,7 +11,7 @@ const themeToggle = document.querySelector(
     // Set the body data-theme attribute to match the local storage item
     document.documentElement.setAttribute("data-theme", currentTheme);
   
-    // If the current theme is dark, check the theme toggle
+    // If the current theme is light, check the theme toggle
     if (currentTheme === "light") {
       themeToggle.checked = true;
     }
