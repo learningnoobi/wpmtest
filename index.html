@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WPM Test</title>
- 
-  <link rel="stylesheet" href="home.css">
-   <link rel="stylesheet" href="media.css">
-</head>
-<body>
-  <div class="container">
-
-    <div class="heading">Speed Typing Test</div>
-
-<div class="limit">
-
-    <a id="fifteen" onclick="fifteen()">15s</a>
-    <a id="thirty" onclick="thirty()">30s</a>
-    <a id="sixty" onclick="sixty()">60s</a>
-    <a id="twomin" onclick="twomin()">120s</a>
-
-</div>
-    <div class="header">
-      <div class="wpm">
-        <div class="header_text">WPM</div>
-        <div class="curr_wpm">100</div>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>WPM Test</title>
+      <link rel="stylesheet" href="home.css">
+      <!-- <link rel="stylesheet" href="media.css"> -->
+   </head>
+   <body>
+      <div class="container">
+      <div class="heading">Speed Typing Test</div>
+      <div class="limit">
+         <a id="fifteen" onclick="setTimeLimit(15)">15s</a>
+         <a id="thirty" onclick="setTimeLimit(30)">30s</a>
+         <a id="sixty" onclick="setTimeLimit(60)">60s</a>
+         <a id="twomin" onclick="setTimeLimit(120)">120s</a>
       </div>
-        <div class="timer">
-        <span><div class="header_text">Time</div>
-        <div class="curr_time"></div></span>
+      <div class="header">
+         <div class="wpm">
+            <div class="header_text">WPM</div>
+            <div class="curr_wpm">100</div>
+         </div>
+         <div class="timer">
+            <span>
+               <div class="header_text">Time</div>
+               <div class="curr_time"></div>
+            </span>
+         </div>
+         <div class="cpm">
+            <div class="header_text">CPM</div>
+            <div class="curr_cpm">100</div>
+         </div>
+         <div class="accuracy">
+            <div class="header_text">% Accuracy</div>
+            <div class="curr_accuracy">100</div>
+         </div>
+         <div class="errors">
+            <div class="header_text">Errors</div>
+            <div class="curr_errors">0</div>
+         </div>
       </div>
-      <div class="cpm">
-        <div class="header_text">CPM</div>
-        <div class="curr_cpm">100</div>
+      <div class="quote">Click on the input area to start the game.</div>
+      <p style="color:snow;">
+         <span style="color:pink;text-transform:uppercase;" id="local"></span> 
+         <label id="lastwpm"></label>
+      </p>
+      <div class="dropdown">
+         <button id = "firstrow" class="dropbtn">Choose Level</button>
+         <div class="dropdown-content">
+            <a onclick="setGameDifficulty('Easy')"><b>Easy</b></a>
+            <a onclick="setGameDifficulty('Medium')"><b>Medium</b></a>
+            <a onclick="setGameDifficulty('Hard')"><b>Hard</b></a>
+            <a onclick="setGameDifficulty('Ultrahard')"><b>Ultra Hard</b></a>
+         </div>
       </div>
-     
- 
-      <div class="accuracy">
-        <div class="header_text">% Accuracy</div>
-        <div class="curr_accuracy">100</div>
-      </div>
-       <div class="errors">
-        <div class="header_text">Errors</div>
-        <div class="curr_errors">0</div>
-      </div>
-    </div>
-
-    <div class="quote">Click on the input area to start the game.</div>
-    <p style="color:snow;">
-        <span style="color:pink;text-transform:uppercase;" id="local"></span> 
-        <label id="lastwpm"></label>
-    </p>
-
-
-<div class="dropdown">
-  <button id = "firstrow" class="dropbtn">Choose Level</button>
-  <div class="dropdown-content">
-  <a onclick="easy()"><b>Easy</b></a>
-  <a onclick="medium()"><b>Medium</b></a>
-  <a onclick="hard()"><b>Hard</b></a>
-  <a onclick="ultrahard()"><b>Ultra Hard</b></a>
-  </div>
-</div>
-    <textarea class="input_area" placeholder="Click me to start test..." oninput="processCurrentText()"
-      onfocus="startGame()"></textarea>
-    <button class="restart_btn" onclick="resetValues()">Restart</button>
-
-    <p style="color:snow">Designed by <a class ="rayon" target=”_blank”  href="https://bishalrai12.com.np"> Rayon (Bishal Rai) . </a></p>
-  <script src="home.js"></script>
-</body>
+      <textarea class="input_area" placeholder="Click me to start test..." oninput="processCurrentText()"
+         onfocus="startGame()"></textarea>
+      <button class="restart_btn" onclick="resetValues()">Restart</button>
+      <p style="color:snow">Designed by <a class ="rayon" target=”_blank”  href="https://bishalrai12.com.np"> Rayon (Bishal Rai) . </a></p>
+      <script src="quotes.js"></script>
+      <script src="home.js"></script>
+   </body>
 </html>
